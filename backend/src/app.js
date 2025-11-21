@@ -4,6 +4,7 @@ import connectDB from "./config/db.js";
 
 import authRoutes from "./routes/auth.routes.js";
 import mentorRoutes from "./routes/mentor.routes.js";
+import taskRoutes from "./routes/task.routes.js";
 
 dotenv.config();
 connectDB();
@@ -14,6 +15,7 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/mentor", mentorRoutes);
+app.use("/api/task", taskRoutes);
 
 // Test route
 app.get("/", (req, res) => res.send("API running"));
